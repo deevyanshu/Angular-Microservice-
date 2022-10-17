@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <span>Form</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<div class="container card mt-3 text-center" style="width:30%;">
+  <h1>Register Form</h1>
+<form [formGroup]="loginForm">
+  <p>
+  <mat-form-field appearance="outline" id="name" style="width: 100%;">
+      <mat-label>name</mat-label>
+      <input type="text" [(ngModel)]="form.name" formControlName="name" matInput placeholder="Enter username" name="name">
+    </mat-form-field></p>
+
+    <p>
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label>password</mat-label>
+      <input type="password" [(ngModel)]="form.password" formControlName="password" matInput placeholder="Enter password" name="password">
+    </mat-form-field></p>
+</form>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="primary" class="mb-2" (click)="onSubmit()" [disabled]="loginForm.invalid">submit</button>
+</div>
+</div>
